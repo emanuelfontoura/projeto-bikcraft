@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Idroid';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fontes/BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fontes/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fontes/Roboto-Bold.ttf') format('truetype');
+}
+
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2:  #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: 'Roboto', Arial, Verdana, Helvetica, sans-serif;
+    --fonte-titulo: 'Bebas Neue', cursive;
+    --font-subtit: 'Idroid',  Arial, Verdana, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: white;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #14a053;
+    border-radius: 30px;
+}
+
+body{
+    background-color: var(--cor0);
+}
+
+header{
+    min-height: 150px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(to top, var(--cor4), var(--cor3));
+}
+nav{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.192);
+}
+
+nav > a{
+    color: rgba(255, 255, 255, 0.822);
+    padding: 10px;
+    text-decoration: none;
+    font-family: var(--fonte-padrao);
+}
+
+nav>a:hover{
+    border-radius: 5px;
+    background-color: #14a053;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+main{
+    background-color: white;
+    min-width: 320px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.315);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+h1{
+    font-family: var(--fonte-titulo);
+    padding-top: 30px;
+    margin-bottom: 4px;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.356);
+}
+
+h2{
+    font-family: var(--font-subtit);
+}
+
+main p{
+    font-family: var(--fonte-padrao);
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.8em;
+}
+
+main strong{
+    font-weight: bold;
+    color: var(--cor4);   
+}
+
+main a{
+    background-color: var(--cor1);
+    font-weight: bold;
+    padding: 1px 3px;
+    text-decoration: none;
+    color: var(--cor5); 
+}
+
+main a:hover{
+    text-decoration: underline;
+    background-color: var(--cor0);
+    transition-duration: 0.3s;
+}
+
+article>h2{
+    color: var(--cor4);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+header>h2{
+    font-family: 'Roboto', Arial, Verdana, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    max-width: 600px; /*SE FOR O NAVEGADOR FOR MENOS DO QUE ISSO, O H2 IRÁ DIMINUIR/ QUEBRAR LINHA*/
+    margin: auto;
+    padding: 0px 10px;
+    padding-bottom: 30px;
+}
+
+article>h1{
+    font-family: var(--font-subtit);
+    font-size: 2em;
+    color: var(--cor5);
+}
+
+main img{
+    width: 100%;
+    margin: 20px auto;
+}
+
+.pequena{
+    margin: auto;
+    display: block;
+    max-width: 300px;
+}
+
+.ext::after{
+    content: '\00A0\1F517';
+}
+
+.video{
+    background-color: #063d1e;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56.45%;
+    position: relative;
+}
+
+.video>iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor1);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+
+aside p{
+    line-height: 1.4em;
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+}
+
+aside ul{
+    list-style-position: inside;
+    columns: 2;
+    list-style-type: '\2714\00A0\00A0';
+}
+
+footer{
+    background-color: var(--cor3);
+    font-family: var(--fonte-padrao);
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: var(--cor4);
+    transition-duration: 0.2s;
+    text-decoration: underline;
+}
