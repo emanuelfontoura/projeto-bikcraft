@@ -1,2 +1,2 @@
 # projeto-bikcraft
- Projeto de site Bikcraft realizado junto ao Origamid.
+ Projeto de site realizado junto ao Origamid.

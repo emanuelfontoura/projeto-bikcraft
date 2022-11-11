@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* POSICIONAMENTO DA PÁGINA */
+body{
+    display: grid;
+    gap: 60px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "logo"
+        "menu"
+        "principal"
+        "rodape";
+    background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CABEÇALHO = LOGO + MENU */
+.logo{
+    grid-area: logo;
+    display: flex;
+    margin: 60px 20px;
+    justify-content: center;
+}
+
+.menu{
+    grid-area: menu;
+}
+
+.lista-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lista-menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+}
+
+.lista-menu a:hover{
+    border-color: #e21;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.principal{
+    grid-area: principal;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    position: relative;
+}
+
+p{
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.infos{
+    color: #000000;
+    background-color: white;
+    padding: 40px;
+    position: relative;
+    text-align: right;
+    display: grid;
+    align-content: center;
+    justify-items: end;
+    gap: 20px;
+}
+
+.infos > h1{
+    font-size: 2rem;
+}
+
+/* DETALHE BARRA VERMELHA */
+.infos::before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 60px;
+    background-color: #ee2211;
+    right: -30px;
+    top: 30px;
+}
+
+/* BOTÃO "VER MAIS" */
+.infos > .vermais{
+    background-color: #ee2211;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+}
+
+.infos > .vermais > a{
+    text-decoration: none;
+    color: white;
+}
+
+.infos > .vermais:hover{
+    background-color: #900;
+}
+
+.infos > h1{
+    margin-bottom: 20px;
+}
+
+/* FOTO DA BICICLETA */
+.imagem > img{
+    max-width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: top right;
+}
+
+/* TÍTULO : VANTAGENS BIKCRAFT */
+.titulo{
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #c6c6c6;
+    text-align: right;
+    font-weight: bold;
+    padding: 40px;
+    align-self: center;
+    background: url(../images/onda.svg) repeat;
+    /* word-break: break-all; */
+}
+
+/* QUADRO COM AS VANTAGENS */
+.vantagens{
+    background-color: white;
+    padding: 40px;
+}
+
+.vantagens-item:nth-child(odd){
+    background-color: #f7f7f7;
+}
+
+.vantagens-item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    padding: 20px;
+}
+
+.vantagens-item:hover{
+    border-left: 4px solid #900;
+}
+
+.vantagens > .vantagens-item + .vantagens-item{
+    margin-top: 40px;
+}
+
+.vantagens-item p {
+    grid-column: 2;
+}
+
+/* RODAPÉ */
+.rodape{
+    grid-area: rodape;
+    background-color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* MEDIA QUERY PARA CELULARES */
+@media (max-width: 1000px){
+    .parte2{
+        grid-template-columns: 1fr;
+    }
+
+    .titulo{
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px){
+    body{
+        gap: 40px;
+    }
+
+    .principal{
+        grid-template-columns: 1fr;
+    }
+
+    .logo{
+        margin: 30px 10px;
+    }
+
+    .principal{
+        grid-template-columns: 1fr;
+    }
+
+    .infos::before{
+        display: none;
+    }
+
+    .infos{
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .infos > .vermais{
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .infos > h1{
+        margin-bottom: 7px;
+    }
+
+    .titulo{
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 400px){
+    .titulo{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+}
